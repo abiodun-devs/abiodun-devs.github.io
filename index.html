@@ -1,141 +1,427 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Abiodun Ilugbusi — AI Engineer and Full-Stack Developer">
-  <title>Abiodun Ilugbusi | AI Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Abiodun Adebowale Ilugbusi — AI Systems Architect specialising in agentic AI, RAG, human-in-the-loop systems and safety-critical engineering software.">
+  <title>Abiodun Ilugbusi | AI Systems Architect</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #0b1220;
+      --bg-soft: #111a2e;
+      --card: #141f36;
+      --line: #223052;
+      --text: #e6ebf5;
+      --muted: #9aa8c7;
+      --accent: #5aa9ff;
+      --accent-2: #8fd3ff;
+      --tag: #1c2a47;
+      --ok: #3ddc97;
+      --warn: #ffc857;
+    }
     * { box-sizing: border-box; }
-
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0b1120;
-      color: #e5e7eb;
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.7;
+      font-size: 16px;
     }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    h1, h2, h3 { font-family: "Source Serif 4", Georgia, serif; margin: 0; letter-spacing: -0.01em; }
 
-    header, main, footer {
-      max-width: 900px;
-      margin: auto;
-      padding: 28px 22px;
+    /* ---------- Top nav ---------- */
+    .topbar {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(11,18,32,0.85);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
     }
+    .topbar .inner {
+      max-width: 1000px; margin: auto; padding: 14px 20px;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .brand { font-weight: 700; font-size: 1.05rem; color: var(--text); }
+    .topbar nav a { color: var(--muted); margin-left: 18px; font-weight: 500; font-size: 0.95rem; }
+    .topbar nav a:hover { color: var(--text); text-decoration: none; }
 
-    header { padding-top: 90px; padding-bottom: 65px; }
+    /* ---------- Hero ---------- */
+    .hero {
+      max-width: 1000px; margin: auto; padding: 72px 20px 56px;
+      display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center;
+    }
+    .hero h1 { font-size: clamp(2rem, 4vw, 2.9rem); line-height: 1.15; }
+    .hero .role { color: var(--accent-2); font-weight: 600; margin: 12px 0 4px; font-size: 1.1rem; }
+    .hero .lead { color: var(--muted); max-width: 58ch; margin: 10px 0 24px; }
+    .hero .meta { color: var(--muted); font-size: 0.95rem; }
+    .hero .meta span { margin-right: 18px; white-space: nowrap; }
+    .btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
+    .btn {
+      display: inline-block; padding: 11px 20px; border-radius: 8px; font-weight: 600;
+      border: 1px solid var(--line); color: var(--text); background: var(--card);
+    }
+    .btn.primary { background: var(--accent); border-color: var(--accent); color: #06111f; }
+    .btn:hover { text-decoration: none; filter: brightness(1.1); }
 
-    .tag { color: #60a5fa; font-weight: bold; }
+    /* Passport-style photo: 35 × 45 mm ratio */
+    .photo-wrap { text-align: center; }
+    .photo {
+      width: 168px; height: 216px; object-fit: cover; object-position: center top;
+      border-radius: 14px; border: 3px solid var(--line);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+      background: var(--card);
+    }
+    .photo-wrap small { display: block; color: var(--muted); margin-top: 10px; font-size: 0.85rem; }
 
-    h1 { font-size: clamp(2.5rem, 7vw, 4.5rem); line-height: 1.1; }
-    h2 { color: #93c5fd; }
+    /* ---------- Sections ---------- */
+    main { max-width: 1000px; margin: auto; padding: 0 20px 40px; }
+    section { padding: 48px 0; border-top: 1px solid var(--line); }
+    section h2 { font-size: 1.7rem; color: var(--accent-2); margin-bottom: 20px; }
+    .section-intro { color: var(--muted); max-width: 70ch; margin-bottom: 24px; }
 
-    a { color: #60a5fa; }
-
-    nav { display: flex; flex-wrap: wrap; gap: 20px; }
-    nav a { text-decoration: none; }
+    .grid { display: grid; gap: 18px; }
+    .grid.two { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 
     .card {
-      background: #151e30;
-      border: 1px solid #29364b;
-      padding: 22px;
-      border-radius: 14px;
-      margin: 16px 0;
+      background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 24px;
     }
-
-    .button {
-      display: inline-block;
-      background: #2563eb;
-      color: white;
-      text-decoration: none;
-      padding: 10px 16px;
-      border-radius: 8px;
-      margin: 8px 8px 8px 0;
+    .card h3 { font-size: 1.2rem; margin-bottom: 8px; }
+    .card p { margin: 0 0 12px; color: var(--text); }
+    .card .sub { color: var(--muted); font-size: 0.92rem; margin-bottom: 10px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .tag {
+      background: var(--tag); border: 1px solid var(--line); color: var(--muted);
+      font-size: 0.8rem; padding: 3px 10px; border-radius: 999px;
     }
+    .badge {
+      display: inline-block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.04em;
+      padding: 3px 10px; border-radius: 999px; margin-bottom: 10px; text-transform: uppercase;
+    }
+    .badge.live { background: rgba(61,220,151,0.12); color: var(--ok); border: 1px solid rgba(61,220,151,0.35); }
+    .badge.proposed { background: rgba(255,200,87,0.12); color: var(--warn); border: 1px solid rgba(255,200,87,0.35); }
 
-    footer { color: #9ca3af; border-top: 1px solid #29364b; }
+    /* Skills */
+    .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+    .skill { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; }
+    .skill h3 { font-size: 0.95rem; color: var(--accent-2); margin-bottom: 6px; font-family: "Inter", sans-serif; }
+    .skill p { margin: 0; color: var(--text); font-size: 0.95rem; }
+
+    /* Experience */
+    .timeline { display: grid; gap: 14px; }
+    .job { background: var(--bg-soft); border: 1px solid var(--line); border-radius: 12px; padding: 18px 22px; }
+    .job .head { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .job h3 { font-size: 1.05rem; font-family: "Inter", sans-serif; }
+    .job .org { color: var(--muted); font-size: 0.93rem; }
+    .job .when { color: var(--muted); font-size: 0.9rem; white-space: nowrap; }
+    .job p { margin: 8px 0 0; color: var(--text); font-size: 0.95rem; }
+
+    /* Contact */
+    .contact-list { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px; }
+    .contact-list a {
+      background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+      padding: 12px 18px; color: var(--text); font-weight: 500;
+    }
+    .contact-list a:hover { border-color: var(--accent); text-decoration: none; }
+
+    footer { text-align: center; padding: 28px 20px 36px; color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--line); }
+
+    @media (max-width: 720px) {
+      .hero { grid-template-columns: 1fr; text-align: center; padding-top: 48px; }
+      .hero .lead { margin-left: auto; margin-right: auto; }
+      .btns { justify-content: center; }
+      .photo-wrap { order: -1; }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <p class="tag">AI ENGINEERING · FULL-STACK DEVELOPMENT</p>
-    <h1>Hi, I'm Abiodun.</h1>
-    <p>
-      I build intelligent software, AI-powered applications,
-      and scalable systems that solve real-world problems.
-    </p>
-    <a class="button" href="#projects">Explore my projects</a>
-    <a href="https://github.com/abiodun-devs">GitHub profile</a>
 
-    <nav style="margin-top: 35px;">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <div class="topbar">
+    <div class="inner">
+      <span class="brand">Abiodun Ilugbusi</span>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#proposals">Proposals</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div>
+      <h1>Abiodun Adebowale Ilugbusi</h1>
+      <div class="role">AI Systems Architect · Agentic AI · Human-in-the-Loop Systems</div>
+      <p class="lead">
+        I design and run production AI systems for safety-critical engineering — retrieval-augmented
+        generation, multi-step agent workflows with human approval gates, and the backend platforms that
+        keep them reliable, auditable and secure.
+      </p>
+      <div class="meta">
+        <span>📍 Incheon, South Korea</span>
+        <span>💼 10+ years in software &amp; AI</span>
+        <span>🎓 M.Sc. Computer Science</span>
+      </div>
+      <div class="btns">
+        <a class="btn primary" href="#projects">View projects</a>
+        <a class="btn" href="https://github.com/abiodun-devs" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/abiodun-ilugbusi" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div class="photo-wrap">
+      <!-- Add your passport photo to the repo as assets/photo.jpg (portrait, roughly 35×45 mm ratio) -->
+      <img class="photo" src="assets/photo.jpg" alt="Portrait of Abiodun Adebowale Ilugbusi">
+      <small>Abiodun A. Ilugbusi</small>
+    </div>
   </header>
 
   <main>
+
     <section id="about">
-      <h2>About Me</h2>
+      <h2>About</h2>
       <p>
-        I'm a software developer focused on AI engineering,
-        full-stack systems, retrieval-augmented generation (RAG),
-        and cloud-based solutions. I enjoy turning complex
-        technical challenges into practical applications.
+        I lead AI systems engineering at Bumchang Engineering in Seoul, where I own the technical direction
+        for AI-enabled decision-support platforms used in infrastructure risk assessment. My work sits at the
+        intersection of large language models and deterministic engineering computation: building RAG
+        pipelines with source grounding and hallucination detection, orchestrating LangChain/LangGraph agents
+        that keep engineers in control through explicit review gates, and running the Node.js, Python and
+        cloud infrastructure underneath.
+      </p>
+      <p>
+        Before this I built LLM-powered backend features at FunWorld, developed machine-learning and
+        data workflows at Ghent University Global Campus, and led a six-engineer team delivering a legal
+        process-automation platform for a government SME funding programme in Nigeria. I've been based in
+        South Korea since 2021 and have worked across Korean, European and African organisations.
       </p>
     </section>
 
     <section id="skills">
       <h2>Technical Skills</h2>
-      <div class="card">
-        <p><strong>Languages:</strong> Python, JavaScript, TypeScript, SQL</p>
-        <p><strong>Development:</strong> React, Node.js, APIs, databases</p>
-        <p><strong>AI:</strong> LLM applications, RAG, LangChain, LangGraph</p>
-        <p><strong>Cloud and delivery:</strong> AWS, Azure, Git, CI/CD</p>
+      <div class="skills">
+        <div class="skill">
+          <h3>AI Agents &amp; Orchestration</h3>
+          <p>LangChain, LangGraph, CrewAI, AutoGen, Copilot Studio · RAG &amp; vector databases · model-agnostic LLM integration (GPT, Claude, Gemini, open-source) · human-in-the-loop design · output evaluation &amp; hallucination detection</p>
+        </div>
+        <div class="skill">
+          <h3>Languages</h3>
+          <p>TypeScript, JavaScript (Node.js), Python, SQL · Golang, Java</p>
+        </div>
+        <div class="skill">
+          <h3>Backend &amp; APIs</h3>
+          <p>Node.js, Nest.js, Express, FastAPI, Django · REST, GraphQL, OData</p>
+        </div>
+        <div class="skill">
+          <h3>Data &amp; ML</h3>
+          <p>PostgreSQL, MySQL, MongoDB · Apache Spark, Kafka · ETL &amp; integration · PyTorch, TensorFlow, Scikit-learn</p>
+        </div>
+        <div class="skill">
+          <h3>Cloud &amp; DevOps</h3>
+          <p>AWS, Azure, Docker, Kubernetes · CI/CD (Jenkins, GitLab CI) · Git</p>
+        </div>
+        <div class="skill">
+          <h3>Observability, Testing &amp; Security</h3>
+          <p>Grafana, Prometheus, ELK, OpenTelemetry · Jest, Playwright, Supertest · access control, audit trails, data-quality validation · CompTIA Security+</p>
+        </div>
       </div>
     </section>
 
     <section id="projects">
       <h2>Featured Projects</h2>
+      <p class="section-intro">Selected engineering work — safety-critical simulation tools and applied AI systems.</p>
+      <div class="grid two">
 
-      <article class="card">
-        <h3>RAG Document Assistant</h3>
-        <p>
-          A document question-answering application using
-          document parsing, chunking, retrieval, and LLMs.
-        </p>
-        <a href="https://github.com/abiodun-devs">
-          Explore my repositories
-        </a>
-      </article>
+        <div class="card">
+          <span class="badge live">Production</span>
+          <h3>Tunnel Fire Quantitative Risk Assessment (QRA) System</h3>
+          <p class="sub">Python · PyQt · FDS · Monte Carlo evacuation modelling</p>
+          <p>
+            A full reimplementation of a legacy Visual Basic road-tunnel QRA tool as a modern Python
+            application. The system generates fire-simulation inputs, runs tunnel fire and evacuation
+            scenarios across fire positions, traffic conditions and ventilation states, computes evacuee
+            exposure (FED) and fatality estimates, and produces societal-risk F–N curves and risk indices
+            for tunnel safety assessment.
+          </p>
+          <p>
+            The legacy algorithms were recovered through binary analysis and ported faithfully, with every
+            constant traceable to the original and validated against reference outputs so results remain
+            tunnel-independent.
+          </p>
+          <div class="tags">
+            <span class="tag">Reverse engineering</span><span class="tag">Numerical modelling</span>
+            <span class="tag">F–N curves</span><span class="tag">Desktop GUI</span>
+          </div>
+        </div>
 
-      <article class="card">
-        <h3>AI Risk Analysis Platform</h3>
-        <p>
-          An engineering concept combining automated data
-          processing, analytics, and risk-informed decisions.
-        </p>
-        <p>Project details coming soon.</p>
-      </article>
+        <div class="card">
+          <span class="badge live">Production</span>
+          <h3>Train Performance Simulation (TPS) System</h3>
+          <p class="sub">Python · Rail operations modelling</p>
+          <p>
+            A train-performance simulator that models a train's movement along a route from track
+            geometry, gradients, speed limits, traction and braking characteristics. It computes
+            run times, speed profiles and energy use, and supports headway and operational planning
+            studies for urban and mainline rail.
+          </p>
+          <div class="tags">
+            <span class="tag">Simulation</span><span class="tag">Rail planning</span>
+            <span class="tag">Data visualisation</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="badge live">Production</span>
+          <h3>AI Decision-Support Platform for Infrastructure Risk</h3>
+          <p class="sub">LangChain · LangGraph · RAG · Node.js / TypeScript</p>
+          <p>
+            A model-agnostic RAG and agent platform that lets engineers query technical standards,
+            reports and simulation results in natural language. Multi-step agent workflows combine
+            deterministic engineering outputs with LLM reasoning, with validation layers and human
+            approval gates before any recommendation is accepted.
+          </p>
+          <div class="tags">
+            <span class="tag">RAG</span><span class="tag">Agentic workflows</span>
+            <span class="tag">Human-in-the-loop</span><span class="tag">Evaluation</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="badge live">Delivered</span>
+          <h3>Legal Process Automation Framework</h3>
+          <p class="sub">Government SME funding programme · Nigeria</p>
+          <p>
+            A platform that digitised the legal, compliance and approval chain governing phased fund
+            disbursement — rule-based funding gates, automated document generation, role-based approvals
+            and end-to-end audit trails — replacing a manual, document-heavy process.
+          </p>
+          <div class="tags">
+            <span class="tag">Workflow automation</span><span class="tag">APIs</span>
+            <span class="tag">Governance</span>
+          </div>
+        </div>
+
+      </div>
+      <p style="margin-top:18px;"><a href="https://github.com/abiodun-devs" target="_blank" rel="noopener">Explore my repositories →</a></p>
+    </section>
+
+    <section id="proposals">
+      <h2>Proposals &amp; Roadmap</h2>
+      <p class="section-intro">Extensions I have scoped and proposed but not yet implemented. These describe the direction the work is heading.</p>
+      <div class="grid two">
+
+        <div class="card">
+          <span class="badge proposed">Proposed</span>
+          <h3>QRA Extension for Clean-Energy Vehicles</h3>
+          <p>
+            Extend the tunnel QRA system beyond conventional fuels to cover electric and hydrogen
+            vehicles — battery thermal-runaway and hydrogen-release fire scenarios, revised heat-release
+            and toxic-gas profiles, and updated accident-frequency tables reflecting changing fleet mix.
+          </p>
+          <div class="tags"><span class="tag">EV / H₂ fire scenarios</span><span class="tag">Risk modelling</span></div>
+        </div>
+
+        <div class="card">
+          <span class="badge proposed">Proposed</span>
+          <h3>AI-Assisted QRA Review &amp; Reporting</h3>
+          <p>
+            Integrate the RAG/agent platform with the QRA engine so that simulation results are
+            automatically cross-checked against tunnel safety standards, anomalies are flagged, and
+            draft assessment reports are generated for engineer review and sign-off.
+          </p>
+          <div class="tags"><span class="tag">Agentic workflow</span><span class="tag">Human approval gates</span></div>
+        </div>
+
+        <div class="card">
+          <span class="badge proposed">Proposed</span>
+          <h3>Multilingual, User-Centric Interface</h3>
+          <p>
+            Redesign the QRA and TPS interfaces with full Korean/English language support, guided
+            scenario setup, and clearer result dashboards so that non-specialist engineers can run and
+            interpret assessments with less training.
+          </p>
+          <div class="tags"><span class="tag">UX</span><span class="tag">i18n</span></div>
+        </div>
+
+        <div class="card">
+          <span class="badge proposed">Proposed</span>
+          <h3>Packaged, Installable Release</h3>
+          <p>
+            Consolidate the codebase, add automated regression tests against reference tunnels, and ship
+            the tools as signed installers with CI/CD-driven builds so they can be deployed across teams
+            without a development environment.
+          </p>
+          <div class="tags"><span class="tag">CI/CD</span><span class="tag">Testing</span><span class="tag">Packaging</span></div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="timeline">
+        <div class="job">
+          <div class="head">
+            <div><h3>Senior System Developer — Team Lead, AI Systems</h3><div class="org">Bumchang Engineering Co. Ltd · Seoul</div></div>
+            <div class="when">Nov 2025 – Present</div>
+          </div>
+          <p>Technical authority for AI architecture across backend services, AI pipelines, data and production operations. Delivered the production data platform within three months, cutting manual data processing by 60%.</p>
+        </div>
+        <div class="job">
+          <div class="head">
+            <div><h3>Full-Stack / Platform Engineer (AI Systems)</h3><div class="org">FunWorld Company · Incheon</div></div>
+            <div class="when">Sep 2024 – Jul 2025</div>
+          </div>
+          <p>Shipped LLM-powered features in production Node.js/TypeScript services and built data-integration pipelines that improved reporting workflows by 40%.</p>
+        </div>
+        <div class="job">
+          <div class="head">
+            <div><h3>Research Engineer / AI Data Analyst</h3><div class="org">Ghent University Global Campus · Incheon</div></div>
+            <div class="when">Oct 2021 – Aug 2024</div>
+          </div>
+          <p>Built machine-learning and computational data workflows for international research teams; optimised processing algorithms by 40%.</p>
+        </div>
+        <div class="job">
+          <div class="head">
+            <div><h3>Software Developer / Database Administrator</h3><div class="org">Avenue Impact Consulting · Port Harcourt</div></div>
+            <div class="when">Jan 2015 – Aug 2021</div>
+          </div>
+          <p>Led a six-engineer team delivering a legal process-automation platform; administered databases handling over a million transactions a day.</p>
+        </div>
+        <div class="job">
+          <div class="head">
+            <div><h3>Data Analyst</h3><div class="org">Saev-Mesa Technologies · Lagos</div></div>
+            <div class="when">Mar 2010 – Dec 2014</div>
+          </div>
+          <p>Automated KPI reporting with Excel and Tableau, halving analysis time and supporting initiatives behind 20% revenue growth.</p>
+        </div>
+      </div>
+      <p style="margin-top:22px; color: var(--muted); font-size: 0.95rem;">
+        <strong style="color: var(--text);">Education:</strong> M.Sc. Computer Science, Federal University of Technology, Akure (2017) ·
+        B.Sc. Mathematics &amp; Computer Science, Federal University of Technology, Minna (2008)<br>
+        <strong style="color: var(--text);">Certifications:</strong> CompTIA Security+ · IBM Agentic AI (LangGraph, CrewAI, AutoGen) · IBM Vector Databases for RAG · Vanderbilt Prompt Engineering · IO4PM™ Program/Project Manager
+      </p>
     </section>
 
     <section id="contact">
-      <h2>Let's Connect</h2>
-      <p>Interested in AI engineering, software development,
-         or technical collaboration?</p>
-      <a class="button" href="https://github.com/abiodun-devs">
-        Find me on GitHub
-      </a>
-       <a class="button"  href="https://www.linkedin.com/in/abiodun-ilugbusi">
-        Find me on linkedin
-      </a>
-
+      <h2>Contact</h2>
+      <p class="section-intro">Open to conversations about AI systems architecture, agentic workflows and safety-critical engineering software.</p>
+      <div class="contact-list">
+        <a href="mailto:aailugbusi@gmail.com">✉️ aailugbusi@gmail.com</a>
+        <a href="https://github.com/abiodun-devs" target="_blank" rel="noopener">GitHub · abiodun-devs</a>
+        <a href="https://www.linkedin.com/in/abiodun-ilugbusi" target="_blank" rel="noopener">LinkedIn · abiodun-ilugbusi</a>
+      </div>
     </section>
+
   </main>
 
   <footer>
-    <p>© 2026 Abiodun Ilugbusi · Built with GitHub Pages</p>
+    © 2026 Abiodun Adebowale Ilugbusi · Built with GitHub Pages
   </footer>
+
 </body>
 </html>
