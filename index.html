@@ -200,6 +200,24 @@
     .courses li { padding-left: 18px; position: relative; }
     .courses li::before { content: "›"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
 
+    /* Research & publications */
+    .pub {
+      background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--accent);
+      border-radius: 14px; padding: 24px 26px;
+    }
+    .pub-type { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent-2); margin-bottom: 8px; }
+    .pub h3 { font-size: 1.25rem; line-height: 1.35; margin-bottom: 8px; }
+    .pub h3 a { color: var(--text); }
+    .pub h3 a:hover { color: var(--accent-2); text-decoration: none; }
+    .pub-meta { color: var(--muted); font-size: 0.93rem; margin: 0 0 12px; }
+    .pub-meta strong { color: var(--text); }
+    .pub p { margin: 0 0 12px; }
+    .pub-links { display: flex; flex-wrap: wrap; gap: 10px 22px; font-size: 0.92rem; font-weight: 500; }
+    .profile-card { display: block; color: var(--text); transition: border-color .2s ease, transform .2s ease; }
+    .profile-card:hover { border-color: var(--accent); text-decoration: none; transform: translateY(-2px); }
+    .profile-card p { color: var(--muted); font-size: 0.95rem; margin-bottom: 10px; }
+    .profile-cta { color: var(--accent); font-weight: 600; font-size: 0.92rem; }
+
     /* Contact */
     .contact-list { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px; }
     .contact-list a {
@@ -234,6 +252,7 @@
         <a href="#proposals">Proposals</a>
         <a href="#experience">Experience</a>
         <a href="#teaching">Teaching</a>
+        <a href="#research">Research</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -259,6 +278,7 @@
         <a class="btn primary" href="#projects">View projects</a>
         <a class="btn" href="https://github.com/abiodun-devs" target="_blank" rel="noopener">GitHub</a>
         <a class="btn" href="https://www.linkedin.com/in/abiodun-ilugbusi" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://scholar.google.com/citations?hl=en&amp;user=IBVbMjYAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
       </div>
     </div>
     <div class="photo-wrap">
@@ -621,6 +641,45 @@
       </div>
     </section>
 
+    <section id="research">
+      <h2>Research &amp; Publications</h2>
+      <p class="section-intro">
+        Peer-reviewed work and academic profiles. My research interests span biometric authentication,
+        applied machine learning, and AI for safety-critical engineering systems.
+      </p>
+
+      <div class="pub">
+        <div class="pub-type">Conference paper · Master's research</div>
+        <h3><a href="https://ieeexplore.ieee.org/document/8123780" target="_blank" rel="noopener">Development of a Multi-Instance Fingerprint Based Authentication System</a></h3>
+        <p class="pub-meta">
+          <strong>A. A. Ilugbusi</strong> · 2017 International Conference on Computing, Networking and Informatics (ICCNI) ·
+          Lagos, Nigeria · IEEE, October 2017
+        </p>
+        <p>
+          Design and implementation of an authentication system that fuses multiple fingerprint instances
+          from the same user to improve matching accuracy and robustness over single-print verification.
+          Developed from my M.Sc. research in Computer Science.
+        </p>
+        <div class="pub-links">
+          <a href="https://ieeexplore.ieee.org/document/8123780" target="_blank" rel="noopener">IEEE Xplore ↗</a>
+          <a href="https://doi.org/10.1109/ICCNI.2017.8123780" target="_blank" rel="noopener">DOI: 10.1109/ICCNI.2017.8123780</a>
+        </div>
+      </div>
+
+      <div class="grid two" style="margin-top:18px;">
+        <a class="card profile-card" href="https://scholar.google.com/citations?hl=en&amp;user=IBVbMjYAAAAJ" target="_blank" rel="noopener">
+          <h3>Google Scholar</h3>
+          <p>Full publication list, citations and co-authors.</p>
+          <span class="profile-cta">View profile ↗</span>
+        </a>
+        <a class="card profile-card" href="https://ieeexplore.ieee.org/document/8123780" target="_blank" rel="noopener">
+          <h3>IEEE Xplore</h3>
+          <p>Published conference proceedings in the IEEE digital library.</p>
+          <span class="profile-cta">View paper ↗</span>
+        </a>
+      </div>
+    </section>
+
     <section id="contact">
       <h2>Contact</h2>
       <p class="section-intro">Open to conversations about AI systems architecture, agentic workflows, safety-critical engineering software, and academic collaboration.</p>
@@ -645,6 +704,13 @@
             <svg viewBox="0 0 24 24" style="display:none" aria-hidden="true"><path d="M9 3h6a2 2 0 0 1 2 2v2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h3V5a2 2 0 0 1 2-2zm0 2v2h6V5H9zM4 9v3h16V9H4zm0 5v5h16v-5h-5v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-1H4z"/></svg>
           </span>
           LinkedIn · abiodun-ilugbusi
+        </a>
+        <a href="https://scholar.google.com/citations?hl=en&amp;user=IBVbMjYAAAAJ" target="_blank" rel="noopener">
+          <span class="ico">
+            <img src="assets/scholar.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+            <svg viewBox="0 0 24 24" style="display:none" aria-hidden="true"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zm0 15.2-6-3.3V11l6 3.3 6-3.3v3.9l-6 3.3z"/></svg>
+          </span>
+          Google Scholar
         </a>
       </div>
     </section>
