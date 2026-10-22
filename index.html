@@ -105,6 +105,28 @@
     .badge.live { background: rgba(61,220,151,0.12); color: var(--ok); border: 1px solid rgba(61,220,151,0.35); }
     .badge.proposed { background: rgba(255,200,87,0.12); color: var(--warn); border: 1px solid rgba(255,200,87,0.35); }
 
+    .subhead {
+      font-family: "Inter", sans-serif; font-size: 1.05rem; font-weight: 600;
+      color: var(--text); text-transform: uppercase; letter-spacing: 0.08em;
+      margin: 36px 0 6px; padding-left: 12px; border-left: 3px solid var(--accent);
+    }
+    .subhead:first-of-type { margin-top: 8px; }
+
+    /* First-page previews of project briefs */
+    .pdf-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 18px; }
+    .pdf-card {
+      margin: 0; background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+      overflow: hidden; transition: transform .15s ease, border-color .15s ease;
+    }
+    .pdf-card:hover { transform: translateY(-3px); border-color: var(--accent); }
+    .pdf-card img {
+      display: block; width: 100%; aspect-ratio: 210 / 297; object-fit: cover; object-position: top;
+      background: #fff; border-bottom: 1px solid var(--line);
+    }
+    .pdf-card figcaption { padding: 12px 14px; font-size: 0.9rem; line-height: 1.4; }
+    .pdf-card figcaption strong { display: block; color: var(--text); font-weight: 600; }
+    .pdf-card figcaption span { color: var(--muted); font-size: 0.82rem; }
+
     /* Skills */
     .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
     .skill { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; }
@@ -119,6 +141,17 @@
     .job .org { color: var(--muted); font-size: 0.93rem; }
     .job .when { color: var(--muted); font-size: 0.9rem; white-space: nowrap; }
     .job p { margin: 8px 0 0; color: var(--text); font-size: 0.95rem; }
+
+    /* Education */
+    .edu { margin-top: 10px; }
+    .edu ul { list-style: none; padding: 0; margin: 0 0 8px; display: grid; gap: 10px; }
+    .edu li {
+      background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+      padding: 14px 18px; font-size: 0.97rem; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+    }
+    .edu li strong { color: var(--text); }
+    .edu li span { color: var(--accent-2); font-weight: 600; white-space: nowrap; }
+    .edu p { color: var(--muted); font-size: 0.93rem; margin: 0; }
 
     /* Contact */
     .contact-list { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px; }
@@ -149,6 +182,7 @@
         <a href="#projects">Projects</a>
         <a href="#proposals">Proposals</a>
         <a href="#experience">Experience</a>
+        <a href="#teaching">Teaching</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -165,8 +199,7 @@
       </p>
       <div class="meta">
         <span>📍 Incheon, South Korea</span>
-        <span>💼 10+ years in software, data analysis &amp; AI</span>
-        <span>🎓 B.Sc. Mathematics and Computer Science</span>
+        <span>💼 10+ years in software &amp; AI</span>
         <span>🎓 M.Sc. Computer Science</span>
       </div>
       <div class="btns">
@@ -196,8 +229,10 @@
       </p>
       <p>
         Before this I built LLM-powered backend features at FunWorld, developed machine-learning and
-        data workflows at Ghent University Global Campus, and led a six-engineer team delivering a legal
-        process-automation platform for a government SME funding programme in Nigeria. I've been based in
+        data workflows at Ghent University Global Campus — where I also taught statistics as a teaching
+        assistant, running practical classes and designing and grading semester group projects — and led
+        a six-engineer team delivering a legal process-automation platform for a government SME funding
+        programme in Nigeria. I've been based in
         South Korea since 2021 and have worked across Korean, European and African organisations.
       </p>
     </section>
@@ -233,8 +268,11 @@
     </section>
 
     <section id="projects">
-      <h2>Featured Projects</h2>
-      <p class="section-intro">Selected engineering work — safety-critical simulation tools and applied AI systems.</p>
+      <h2>Projects</h2>
+      <p class="section-intro">Selected work across industry and academia.</p>
+
+      <h3 class="subhead">Professional</h3>
+      <p class="section-intro">Safety-critical simulation tools and applied AI systems.</p>
       <div class="grid two">
 
         <div class="card">
@@ -308,6 +346,46 @@
 
       </div>
       <p style="margin-top:18px;"><a href="https://github.com/abiodun-devs" target="_blank" rel="noopener">Explore my repositories →</a></p>
+
+      <h3 class="subhead" id="academia">Academia</h3>
+      <p class="section-intro">
+        Semester group projects I designed for undergraduate statistics at Ghent University Global Campus
+        (2022–2024). Each card shows the first page of the project brief.
+      </p>
+      <!--
+        Each preview image is the first page of the brief, exported as PNG.
+        Put the images in the repo at  previews/<file>.png  (A4 portrait, ~800px wide is plenty).
+      -->
+      <div class="pdf-grid">
+        <figure class="pdf-card">
+          <img src="previews/stats-project-1-2022-2023.png" alt="First page: Statistics Project 1, 2022–2023">
+          <figcaption><strong>Statistics Project 1</strong><span>2022–2023</span></figcaption>
+        </figure>
+        <figure class="pdf-card">
+          <img src="previews/stats-project-2-2022-2023.png" alt="First page: Statistics Project 2, 2022–2023">
+          <figcaption><strong>Statistics Project 2</strong><span>2022–2023</span></figcaption>
+        </figure>
+        <figure class="pdf-card">
+          <img src="previews/stats-project-3-2022-2023.png" alt="First page: Statistics Project 3, 2022–2023">
+          <figcaption><strong>Statistics Project 3</strong><span>2022–2023</span></figcaption>
+        </figure>
+        <figure class="pdf-card">
+          <img src="previews/stats-project-1-2023-2024.png" alt="First page: Statistics Project 1, 2023–2024">
+          <figcaption><strong>Statistics Project 1</strong><span>2023–2024</span></figcaption>
+        </figure>
+        <figure class="pdf-card">
+          <img src="previews/stats-project-2-2023-2024.png" alt="First page: Statistics Project 2, 2023–2024">
+          <figcaption><strong>Statistics Project 2</strong><span>2023–2024</span></figcaption>
+        </figure>
+        <figure class="pdf-card">
+          <img src="previews/stats-project-3-2023-2024.png" alt="First page: Statistics Project 3 — Model Building and Parameter Estimation, 2023–2024">
+          <figcaption><strong>Project 3: Model Building &amp; Parameter Estimation</strong><span>2023–2024</span></figcaption>
+        </figure>
+        <figure class="pdf-card">
+          <img src="previews/project-3-non-linear-modeling.png" alt="First page: Project 3 — Non-Linear Modeling">
+          <figcaption><strong>Project 3: Non-Linear Modeling</strong><span>Statistics</span></figcaption>
+        </figure>
+      </div>
     </section>
 
     <section id="proposals">
@@ -381,10 +459,10 @@
         </div>
         <div class="job">
           <div class="head">
-            <div><h3>Research Engineer / AI Data Analyst</h3><div class="org">Ghent University Global Campus · Incheon</div></div>
+            <div><h3>Research Engineer / AI Data Analyst &amp; Teaching Assistant (Statistics)</h3><div class="org">Ghent University Global Campus · Incheon</div></div>
             <div class="when">Oct 2021 – Aug 2024</div>
           </div>
-          <p>Built machine-learning and computational data workflows for international research teams; optimised processing algorithms by 40%.</p>
+          <p>Built machine-learning and computational data workflows for international research teams; optimised processing algorithms by 40%. In parallel, served as teaching assistant for undergraduate statistics — leading practical sessions, designing semester-long group projects on real datasets, and grading student work.</p>
         </div>
         <div class="job">
           <div class="head">
@@ -401,11 +479,63 @@
           <p>Automated KPI reporting with Excel and Tableau, halving analysis time and supporting initiatives behind 20% revenue growth.</p>
         </div>
       </div>
-      <p style="margin-top:22px; color: var(--muted); font-size: 0.95rem;">
-        <strong style="color: var(--text);">Education:</strong> M.Sc. Computer Science, Federal University of Technology, Akure (2017) ·
-        B.Sc. Mathematics &amp; Computer Science, Federal University of Technology, Minna (2008)<br>
-        <strong style="color: var(--text);">Certifications:</strong> CompTIA Security+ · IBM Agentic AI (LangGraph, CrewAI, AutoGen) · IBM Vector Databases for RAG · Vanderbilt Prompt Engineering · IO4PM™ Program/Project Manager
+      <div class="edu">
+        <h3 class="subhead">Education</h3>
+        <ul>
+          <li><strong>M.Sc. Computer Science</strong> — Federal University of Technology, Akure <span>2017</span></li>
+          <li><strong>B.Sc. Mathematics &amp; Computer Science</strong> — Federal University of Technology, Minna <span>2008</span></li>
+        </ul>
+        <h3 class="subhead">Certifications</h3>
+        <p>CompTIA Security+ · IBM Agentic AI (LangGraph, CrewAI, AutoGen) · IBM Vector Databases for RAG · Vanderbilt Prompt Engineering · IO4PM™ Program/Project Manager</p>
+      </div>
+    </section>
+
+    <section id="teaching">
+      <h2>Teaching</h2>
+      <p class="section-intro">
+        Alongside research at Ghent University Global Campus (2021–2024), I worked as a teaching assistant in
+        statistics, responsible for practical classes, project design and assessment across three academic years.
       </p>
+      <div class="grid two">
+        <div class="card">
+          <h3>Practical Classes</h3>
+          <p>
+            Led hands-on statistics sessions in which students applied the week's theory to real data —
+            exploratory analysis, hypothesis testing, regression and model diagnostics — using R and
+            Python, with emphasis on interpreting results rather than just producing them.
+          </p>
+          <div class="tags"><span class="tag">R</span><span class="tag">Python</span><span class="tag">Applied statistics</span></div>
+        </div>
+        <div class="card">
+          <h3>Semester Group Projects</h3>
+          <p>
+            Designed the semester-long group projects for each cohort (2022–2024), including the
+            datasets, research questions, analysis briefs and grading rubrics. Projects progressed from
+            descriptive and inferential analysis through model building and parameter estimation to
+            non-linear modelling.
+          </p>
+          <p class="sub">Example: a liver-function dataset of 591 volunteers used to relate blood-chemistry readings to daily alcohol consumption across genders. <a href="#academia">See the project briefs →</a></p>
+          <div class="tags"><span class="tag">Curriculum design</span><span class="tag">Model building</span><span class="tag">Non-linear modelling</span></div>
+        </div>
+        <div class="card">
+          <h3>Assessment &amp; Feedback</h3>
+          <p>
+            Graded practical assignments and project reports against structured rubrics, giving written
+            feedback on statistical reasoning, analysis choices and presentation of results, and
+            supporting students during office hours.
+          </p>
+          <div class="tags"><span class="tag">Grading</span><span class="tag">Mentoring</span></div>
+        </div>
+        <div class="card">
+          <h3>Academic Interests</h3>
+          <p>
+            Open to teaching, supervision and collaborative research roles in applied statistics,
+            data science, and AI for engineering and safety-critical systems — bridging industry
+            experience with the classroom.
+          </p>
+          <div class="tags"><span class="tag">Teaching</span><span class="tag">Supervision</span><span class="tag">Collaboration</span></div>
+        </div>
+      </div>
     </section>
 
     <section id="contact">
