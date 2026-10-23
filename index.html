@@ -353,20 +353,20 @@
           <h3>Tunnel Fire Quantitative Risk Assessment (QRA) System</h3>
           <p class="sub">Python · PyQt · FDS · Monte Carlo evacuation modelling</p>
           <p>
-            A full reimplementation of a legacy Visual Basic road-tunnel QRA tool as a modern Python
-            application. The system generates fire-simulation inputs, runs tunnel fire and evacuation
-            scenarios across fire positions, traffic conditions and ventilation states, computes evacuee
-            exposure (FED) and fatality estimates, and produces societal-risk F–N curves and risk indices
-            for tunnel safety assessment.
+            An application for quantitative risk assessment of road-tunnel fires. From a tunnel's geometry,
+            traffic and ventilation data, it generates fire-simulation inputs, runs fire and evacuation scenarios 
+            across fire positions and conditions, and computes evacuee exposure (FED), fatalities, societal-risk 
+            F–N curves and risk indices against acceptance criteria.
           </p>
           <p>
-            The legacy algorithms were recovered through binary analysis and ported faithfully, with every
-            constant traceable to the original and validated against reference outputs so results remain
-            tunnel-independent.
+            An integrated AI layer lets engineers query tunnel safety standards, past assessments and simulation results 
+            in natural language through a RAG pipeline, while LangGraph agents cross-check outputs, flag anomalies and draft 
+            assessment reports — every recommendation passing through a human review gate before acceptance.
+          
           </p>
           <div class="tags">
-            <span class="tag">Reverse engineering</span><span class="tag">Numerical modelling</span>
-            <span class="tag">F–N curves</span><span class="tag">Desktop GUI</span>
+            <span class="tag">Fire and evacuation simulation</span><span class="tag">Stocastic modeling</span>
+            <span class="tag">RAG</span><span class="tag">Agentic workflow</span><span class="tag">Human-in-the-loop</span>
           </div>
         </div>
 
@@ -375,14 +375,18 @@
           <h3>Train Performance Simulation (TPS) System</h3>
           <p class="sub">Python · Rail operations modelling</p>
           <p>
-            A train-performance simulator that models a train's movement along a route from track
-            geometry, gradients, speed limits, traction and braking characteristics. It computes
-            run times, speed profiles and energy use, and supports headway and operational planning
-            studies for urban and mainline rail.
+            A train-performance simulator that models a train's movement along a route from track geometry,
+            gradients, speed limits, traction and braking characteristics. It computes run times, speed profiles
+            and energy use, and supports headway and operational planning studies for urban and mainline rail.
+          </p>
+          <p>
+            A built-in optimisation layer searches driving strategies — acceleration, cruising, coasting and braking
+            phases — to find speed profiles that minimise energy consumption within a target run time, letting operators 
+            trade journey time against traction energy and quantify the savings of eco-driving and timetable adjustments.
           </p>
           <div class="tags">
-            <span class="tag">Simulation</span><span class="tag">Rail planning</span>
-            <span class="tag">Data visualisation</span>
+            <span class="tag">Simulation</span><span class="tag">Rail planning</span><span class="tag">Energy optimization</span>
+            <span class="tag">Run-time optimization</span><span class="tag">Data visualisation</span>
           </div>
         </div>
 
