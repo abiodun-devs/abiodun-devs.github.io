@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Abiodun Adebowale Ilugbusi — AI Systems Architect and computer science educator specialising in agentic AI, RAG, human-in-the-loop systems and safety-critical engineering software.">
-  <title>Abiodun Ilugbusi | AI Systems Architect</title>
+  <meta name="description" content="Abiodun Adebowale Ilugbusi — computer scientist building simulation, risk-assessment and optimisation software for safety-critical transport infrastructure, with applied AI and twelve years of higher-education teaching.">
+  <title>Abiodun Ilugbusi | Decision-Support Systems for Transport Infrastructure</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
   <style>
@@ -261,21 +261,24 @@
   <header class="hero">
     <div>
       <h1>Abiodun Adebowale Ilugbusi</h1>
-      <div class="role">AI Systems Architect · Agentic AI · Human-in-the-Loop Systems · Computer Science Educator</div>
+      <div class="role">Transport Simulation &amp; Risk Modelling · Optimisation · Applied AI · Computer Science Educator</div>
       <p class="lead">
-        I design and run production AI systems for safety-critical engineering — retrieval-augmented
-        generation, multi-step agent workflows with human approval gates, and the backend platforms that
-        keep them reliable, auditable and secure. Alongside industry work, I've spent over a decade
-        teaching computer science and statistics at university level.
+        I build quantitative decision-support software for safety-critical transport infrastructure:
+        a Monte Carlo risk-assessment system for road-tunnel fires and a train performance simulator
+        with an energy-optimal driving layer. Where it helps engineers, I add AI — retrieval-augmented
+        querying and agent workflows behind human approval gates. Alongside industry work, I have
+        spent twelve years teaching computer science and statistics in higher education.
       </p>
       <div class="meta">
         <span>📍 Incheon, South Korea</span>
         <span>💼 10+ years in software &amp; AI</span>
         <span>📚 12 years college teaching</span>
-        <span>🎓 B.Sc. Mathematics &amp; Computer Science, M.Sc. Computer Science</span>
+        <span>🎓 B.Tech. Mathematics &amp; Computer Science, M.Tech. Computer Science</span>
       </div>
       <div class="btns">
         <a class="btn primary" href="#projects">View projects</a>
+        <!-- To add a CV button: upload your CV to the repo as assets/cv_ilugbusi.pdf, then uncomment the next line -->
+        <!-- <a class="btn" href="assets/cv_ilugbusi.pdf" target="_blank" rel="noopener">CV (PDF)</a> -->
         <a class="btn" href="https://github.com/abiodun-devs" target="_blank" rel="noopener">GitHub</a>
         <a class="btn" href="https://www.linkedin.com/in/abiodun-ilugbusi" target="_blank" rel="noopener">LinkedIn</a>
         <a class="btn" href="https://scholar.google.com/citations?hl=en&amp;user=IBVbMjYAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
@@ -314,20 +317,24 @@
       <h2>Technical Skills</h2>
       <div class="skills">
         <div class="skill">
-          <h3>AI Agents &amp; Orchestration</h3>
-          <p>LangChain, LangGraph, CrewAI, AutoGen, Copilot Studio · RAG &amp; vector databases · model-agnostic LLM integration (GPT, Claude, Gemini, open-source) · human-in-the-loop design · output evaluation &amp; hallucination detection</p>
+          <h3>Modelling &amp; Simulation</h3>
+          <p>Simulation modelling (train dynamics, traffic flow, evacuation) · Monte Carlo methods · quantitative risk assessment · statistics &amp; regression</p>
         </div>
         <div class="skill">
           <h3>Languages</h3>
-          <p>C, C++, TypeScript, Java, JavaScript (Node.js), Python, SQL, Golang</p>
-        </div>
-        <div class="skill">
-          <h3>Backend &amp; APIs</h3>
-          <p>Node.js, Nest.js, Express, FastAPI, Django · REST, GraphQL, OData</p>
+          <p>Python, R, C, C++, Java, TypeScript, JavaScript (Node.js), SQL, Golang</p>
         </div>
         <div class="skill">
           <h3>Data &amp; ML</h3>
           <p>PostgreSQL, MySQL, MongoDB · Apache Spark, Kafka · ETL &amp; integration · PyTorch, TensorFlow, Scikit-learn</p>
+        </div>
+        <div class="skill">
+          <h3>AI Agents &amp; Orchestration</h3>
+          <p>LangChain, LangGraph, CrewAI, AutoGen, Copilot Studio · RAG &amp; vector databases · model-agnostic LLM integration (GPT, Claude, Gemini, open-source) · human-in-the-loop design · output evaluation &amp; hallucination detection</p>
+        </div>
+        <div class="skill">
+          <h3>Backend &amp; APIs</h3>
+          <p>Node.js, Nest.js, Express, FastAPI, Django · REST, GraphQL, OData</p>
         </div>
         <div class="skill">
           <h3>Cloud &amp; DevOps</h3>
@@ -359,20 +366,27 @@
             F–N curves and risk indices against acceptance criteria.
           </p>
           <p>
-            An integrated AI layer lets engineers query tunnel safety standards, past assessments and simulation results 
-            in natural language through a RAG pipeline, while LangGraph agents cross-check outputs, flag anomalies and draft 
-            assessment reports — every recommendation passing through a human review gate before acceptance.
-          
+            It includes a lane-level traffic model — multinomial-logit lane choice, a Greenshields
+            fundamental diagram and method-of-successive-averages equilibrium — and its traffic and risk
+            calculations are validated against reference outputs of the legacy tool it replaces.
+          </p>
+          <!-- TODO: this sentence says the AI layer is integrated, but the "AI-Assisted QRA Review & Reporting"
+               card under Proposals says it is not yet implemented. Keep whichever is true and remove the other. -->
+          <p>
+            An AI layer lets engineers query standards and results in natural language, with every
+            recommendation passing through a human review gate.
           </p>
           <div class="tags">
-            <span class="tag">Fire and evacuation simulation</span><span class="tag">Stocastic modeling</span>
-            <span class="tag">RAG</span><span class="tag">Agentic workflow</span><span class="tag">Human-in-the-loop</span>
+            <span class="tag">Fire and evacuation simulation</span><span class="tag">Stochastic modelling</span>
+            <span class="tag">Traffic equilibrium</span><span class="tag">Validation</span>
+            <span class="tag">RAG</span><span class="tag">Human-in-the-loop</span>
           </div>
         </div>
 
         <div class="card">
           <span class="badge live">Production</span>
           <h3>Train Performance Simulation (TPS) System</h3>
+          <!-- TODO: name the optimisation method or library the driving-strategy layer uses -->
           <p class="sub">Python · Rail operations modelling</p>
           <p>
             A train-performance simulator that models a train's movement along a route from track geometry,
@@ -465,9 +479,21 @@
           <p>
             Extend the tunnel QRA system beyond conventional fuels to cover electric and hydrogen
             vehicles — battery thermal-runaway and hydrogen-release fire scenarios, revised heat-release
-            and toxic-gas profiles, and updated accident-frequency tables reflecting changing fleet mix.
+            and toxic-gas profiles, and updated accident-frequency tables as road freight shifts to battery-electric and hydrogen trucks.
           </p>
           <div class="tags"><span class="tag">EV / H₂ fire scenarios</span><span class="tag">Risk modelling</span></div>
+        </div>
+
+        <div class="card">
+          <span class="badge proposed">Research direction</span>
+          <h3>From Single-Tunnel Risk to Network Resilience</h3>
+          <p>
+            A tunnel or rail section is one link in a network. This direction moves from assessing the
+            risk of a single asset to choosing investments and response plans for a whole multimodal
+            network: optimisation under uncertainty over disruption scenarios, with simulation models
+            such as the QRA and TPS systems supplying event frequencies, running times and energy use.
+          </p>
+          <div class="tags"><span class="tag">Optimisation under uncertainty</span><span class="tag">Resilient transport</span><span class="tag">Simulation-based optimisation</span></div>
         </div>
 
         <div class="card">
@@ -496,7 +522,7 @@
           <span class="badge proposed">Proposed</span>
           <h3>National Government Identity Cybersecurity and Digital Trust Programme</h3>
           <p>
-            As Nigeria's 136 million national identification number (NINs), biometric passports and digital driver's licenses 
+            As Nigeria's 136 million national identification numbers (NINs), biometric passports and digital driver's licenses 
             become the gateway to every public service, a breach anywhere in the ecosystem follows a citizen everywhere. 
             NGIS-DTP proposes a national trust framework in which agencies verify rather than replicate: a trust broker returns 
             purpose-specific assertions from NIMC, NIS, FRSC, banks and telecom operators, modelled on South Korea's PASS and certain 
@@ -511,11 +537,11 @@
           <p>
             Lagos does not need another transport system; it needs the digital operating layer that makes the 
             one it has predictable, cashless and accountable. L-STOMP applies the architecture of Seoul's TOPIS 
-            nd integrated transport card to Lagos BRT, buses, rail and ferries, turning every journey into an 
+            and integrated transport card to Lagos BRT, buses, rail and ferries, turning every journey into an 
             observable, schedulable, payable and auditable event, from real-time arrival information at the stop
             to performance-based operator settlement that traces every naira from passenger to operator. 
           </p>
-          <div class="tags"><span class="tag">Convinient payment</span><span class="tag">Transparency</span><span class="tag">Accountability</span></div>
+          <div class="tags"><span class="tag">Convenient payment</span><span class="tag">Transparency</span><span class="tag">Accountability</span></div>
         </div>
         
       </div>
@@ -524,7 +550,7 @@
     <section id="experience">
       <h2>Experience</h2>
       <p class="section-intro">
-        Sixteen years across industry and academia — building production software and AI systems while
+        Sixteen years across industry and academia — building simulation, data and AI systems while
         teaching and researching at tertiary level.
       </p>
 
@@ -535,7 +561,7 @@
             <div><h3>Senior System Developer — Team Lead, AI Systems</h3><div class="org">Bumchang Engineering Co. Ltd · Seoul, South Korea</div></div>
             <div class="when">Nov 2025 – Present</div>
           </div>
-          <p>Technical authority for AI architecture across backend services, AI pipelines, data and production operations. Delivered the production data platform within three months, cutting manual data processing by 60%.</p>
+          <p>Technical lead for simulation and AI-enabled decision-support platforms in a safety-critical infrastructure-risk domain, including the TPS and QRA systems. Delivered the production data platform within three months, cutting manual data processing by 60%.</p>
         </div>
         <div class="job">
           <div class="head">
@@ -580,9 +606,10 @@
       <div class="edu">
         <h3 class="subhead">Education</h3>
         <ul>
-          <li><strong>M.Sc. Computer Science</strong> — Federal University of Technology, Akure <span>2017</span></li>
-          <li><strong>B.Sc. Mathematics &amp; Computer Science</strong> — Federal University of Technology, Minna <span>2008</span></li>
+          <li><strong>M.Tech. Computer Science</strong> — Federal University of Technology, Akure <span>2017</span></li>
+          <li><strong>B.Tech. Mathematics &amp; Computer Science</strong> (five-year programme) — Federal University of Technology, Minna <span>2008</span></li>
         </ul>
+        <p>B.Tech. coursework included Systems Operations Research, Optimization Theory, Distribution Theory, Real Analysis, Functional Analysis, and Lebesgue Measure and Integration.</p>
         <h3 class="subhead">Certifications</h3>
         <p>CompTIA Security+ · IBM Agentic AI (LangGraph, CrewAI, AutoGen) · IBM Vector Databases for RAG · Vanderbilt Prompt Engineering · IO4PM™ Program/Project Manager</p>
       </div>
@@ -661,9 +688,9 @@
         <div class="card">
           <h3>Academic Interests</h3>
           <p>
-            Open to teaching, supervision and collaborative research roles in computer science, applied
-            statistics, data science, and AI for engineering and safety-critical systems — bringing
-            industry experience into the classroom.
+            Open to teaching, supervision and collaborative research in computer science, applied
+            statistics, and optimisation and decision support for transport and safety-critical
+            systems — bringing industry experience into the classroom.
           </p>
           <div class="tags"><span class="tag">Teaching</span><span class="tag">Supervision</span><span class="tag">Collaboration</span></div>
         </div>
@@ -673,8 +700,9 @@
     <section id="research">
       <h2>Research &amp; Publications</h2>
       <p class="section-intro">
-        Peer-reviewed work and academic profiles. My research interests span biometric authentication,
-        applied machine learning, and AI for safety-critical engineering systems.
+        My research interests are optimisation under uncertainty, resilient transport networks,
+        simulation-based optimisation with machine-learning surrogates, and quantitative risk assessment.
+        My published work to date is in biometric authentication.
       </p>
 
       <div class="pub">
@@ -687,7 +715,7 @@
         <p>
           Design and implementation of an authentication system that fuses multiple fingerprint instances
           from the same user to improve matching accuracy and robustness over single-print verification.
-          Developed from my M.Sc. research in Computer Science.
+          Developed from my M.Tech. research in Computer Science.
         </p>
         <div class="pub-links">
           <a href="https://ieeexplore.ieee.org/document/8123780" target="_blank" rel="noopener">IEEE Xplore ↗</a>
@@ -711,7 +739,7 @@
 
     <section id="contact">
       <h2>Contact</h2>
-      <p class="section-intro">Open to conversations about AI systems architecture, agentic workflows, safety-critical engineering software, and academic collaboration.</p>
+      <p class="section-intro">Open to conversations about transport modelling and risk, optimisation and decision support, applied AI for engineering, and research collaboration.</p>
       <div class="contact-list">
         <a href="mailto:aailugbusi@gmail.com">
           <span class="ico">
