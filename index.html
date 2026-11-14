@@ -357,7 +357,7 @@
 
         <div class="card">
           <span class="badge live">Production</span>
-          <h3>Tunnel Fire Quantitative Risk Assessment (QRA) System</h3>
+          <h3>Tunnel Fire Quantitative Risk Assessment (QRA) System: Clean Energy Vehicle Integration</h3>
           <p class="sub">Python · PyQt · FDS · Monte Carlo evacuation modelling</p>
           <p>
             An application for quantitative risk assessment of road-tunnel fires. From a tunnel's geometry,
@@ -370,12 +370,20 @@
             fundamental diagram and method-of-successive-averages equilibrium — and its traffic and risk
             calculations are validated against reference outputs of the legacy tool it replaces.
           </p>
-          <!-- TODO: this sentence says the AI layer is integrated, but the "AI-Assisted QRA Review & Reporting"
-               card under Proposals says it is not yet implemented. Keep whichever is true and remove the other. -->
-          <p>
+            Major developments over the legacy system:
+            <ul class="courses">
+            <li>EV fire statistics: the legacy system applied one fire rate per vehicle class; EVs are now a distinct fleet share with a dedicated fire rate from Korean data.</li>
+            <li>Event-tree split: every fire scenario is partitioned into ICE and EV branches.</li>
+            <li>HF source term: FDS input generation adds battery-derived hydrogen fluoride release.</li>
+            <li>Dual-consequence evacuation: one simulation reports FED-only and FED+HF fatalities.</li>
+            <li>Backward compatibility: zero EV share reproduces legacy results.</li>
+            <li>An AI layer lets engineers query standards and results in natural language, with every
+            recommendation passing through a human review gate.</li>  
+          </ul>
+          <!-- <p>
             An AI layer lets engineers query standards and results in natural language, with every
             recommendation passing through a human review gate.
-          </p>
+          </p> -->
           <div class="tags">
             <span class="tag">Fire and evacuation simulation</span><span class="tag">Stochastic modelling</span>
             <span class="tag">Traffic equilibrium</span><span class="tag">Validation</span>
